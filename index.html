@@ -1,1 +1,553 @@
-<!doctype html> <html> <head><meta charset="utf-8"><title>Anna Bosshard</title></head> <body> <h1>Hello — this is AnnaBosshard.com</h1> <p>Site powered by GitHub Pages.</p> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anna Bosshard — Social Psychology</title>
+<meta name="description" content="Anna Bosshard, PhD candidate in Social Psychology at the University of Amsterdam. Consumption reduction and support for large-scale climate action." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper:      #fcfcfa;
+    --paper-warm: #f2f3ec;
+    --olive:      #4b5636;   /* primary ink / intro + footer */
+    --olive-soft: #77815f;   /* muted meta   */
+    --ink:        #2c2f26;   /* body text    */
+    --red:        #b0362b;   /* hover / focus accent */
+    --rule:       #dcded4;   /* hairlines / leaders */
+
+    --wrap: 720px;
+    --font: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- top nav ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar .wrap { display: flex; align-items: center; gap: 20px; height: 58px; }
+  .brand {
+    display: flex; align-items: center; gap: 9px;
+    font-weight: 500; font-size: .98rem; letter-spacing: .01em;
+    color: var(--olive); text-decoration: none; white-space: nowrap;
+  }
+  .brand .mark { font-weight: 700; font-size: 1.15rem; line-height: 1; color: var(--olive); }
+  nav.links {
+    margin-left: auto; display: flex; gap: 22px;
+    overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none;
+  }
+  nav.links::-webkit-scrollbar { display: none; }
+  nav.links a {
+    font-size: .72rem; font-weight: 500; letter-spacing: .11em;
+    text-transform: uppercase; color: var(--olive-soft);
+    text-decoration: none; white-space: nowrap; padding: 4px 0;
+    border-bottom: 1.5px solid transparent; transition: color .18s, border-color .18s;
+  }
+  nav.links a:hover { color: var(--olive); border-color: var(--red); }
+
+  /* ---------- intro (olive) ---------- */
+  .hero { background: var(--olive); color: var(--paper); padding: 46px 0 54px; }
+  .hero-inner { text-align: left; }
+  .monogram {
+    font-size: clamp(3.2rem, 10vw, 5rem); font-weight: 300; line-height: 1;
+    letter-spacing: .02em; color: var(--paper); margin: 0 0 20px;
+  }
+  .hero .eyebrow {
+    font-size: .74rem; font-weight: 500; letter-spacing: .19em;
+    text-transform: uppercase; color: color-mix(in srgb, var(--paper) 80%, transparent);
+    margin: 0 0 16px;
+  }
+  .hero h1 {
+    font-weight: 500; font-size: clamp(1.9rem, 5vw, 2.8rem);
+    line-height: 1.05; letter-spacing: -.02em; margin: 0; color: var(--paper);
+  }
+  .hero .role {
+    font-weight: 400; font-size: clamp(1.02rem, 3vw, 1.22rem);
+    color: color-mix(in srgb, var(--paper) 90%, transparent); margin: 16px 0 0;
+  }
+  .hero .thesis {
+    font-size: .78rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase;
+    color: color-mix(in srgb, var(--paper) 66%, transparent); margin: 22px 0 0;
+  }
+  .hero-mail {
+    display: inline-block; margin-top: 24px;
+    font-size: .84rem; letter-spacing: .02em; color: var(--paper);
+    text-decoration: none; padding-bottom: 2px;
+    border-bottom: 1.5px solid color-mix(in srgb, var(--paper) 40%, transparent);
+    transition: border-color .18s;
+  }
+  .hero-mail:hover { border-color: var(--paper); }
+
+  /* ---------- sections ---------- */
+  section.course { padding: 42px 0; }
+  .head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 24px; }
+  .head h2 {
+    font-weight: 500; font-size: 1.5rem; letter-spacing: -.01em;
+    color: var(--olive); margin: 0;
+  }
+  .head .rule { flex: 1; height: 1px; background: var(--rule); }
+
+  .lede { font-size: 1.12rem; color: var(--ink); margin: 0; max-width: 60ch; }
+  .lede a { color: var(--olive); text-decoration: none; border-bottom: 1.5px solid var(--rule); }
+  .lede a:hover { border-color: var(--red); }
+
+  /* menu line with dotted leader */
+  .menu { list-style: none; margin: 0; padding: 0; }
+  .item { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px dotted var(--rule); }
+  .item:last-child { border-bottom: 0; }
+  .item .m-main { min-width: 0; }
+  .item .m-title { font-size: 1.05rem; color: var(--ink); }
+  .item .m-title .em { color: var(--olive); font-weight: 500; }
+  .item .m-title a { color: var(--olive); text-decoration: none; border-bottom: 1.5px solid var(--rule); }
+  .item .m-title a:hover { border-color: var(--red); }
+  .item .m-sub { font-size: .85rem; color: var(--olive-soft); margin-top: 2px; }
+  .item .m-sub a { color: var(--olive-soft); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .item .m-sub a:hover { color: var(--olive); border-color: var(--red); }
+  .lead { flex: 1 1 24px; min-width: 18px; align-self: center; border-bottom: 1px dotted var(--rule); height: 0; transform: translateY(3px); }
+  .price { font-size: .82rem; color: var(--olive-soft); white-space: nowrap; letter-spacing: .03em; font-variant-numeric: tabular-nums; }
+
+  /* publications */
+  .pub { display: grid; grid-template-columns: 1fr auto; column-gap: 18px; padding: 16px 0; border-bottom: 1px dotted var(--rule); }
+  .pub:last-child { border-bottom: 0; }
+  .pub .p-title { font-size: 1.08rem; font-weight: 500; line-height: 1.4; color: var(--olive); margin: 0 0 5px; }
+  .pub .p-title a { text-decoration: none; border-bottom: 1.5px solid transparent; }
+  .pub .p-title a:hover { border-color: var(--red); }
+  .pub .p-meta { font-size: .87rem; color: var(--olive-soft); margin: 0; }
+  .pub .p-meta .venue { color: var(--ink); }
+  .pub .p-yr { font-size: .82rem; color: var(--olive-soft); text-align: right; padding-top: 4px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .kv { padding: 10px 0; border-bottom: 1px dotted var(--rule); }
+  .kv dt { font-size: .7rem; font-weight: 500; text-transform: uppercase; letter-spacing: .11em; color: var(--olive); margin-bottom: 3px; }
+  .kv dd { margin: 0; font-size: .95rem; color: var(--ink); }
+  .kv dd span { color: var(--olive-soft); }
+
+  .note { font-size: .78rem; color: var(--olive-soft); margin-top: 16px; letter-spacing: .01em; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 34px; background: var(--olive); color: var(--paper-warm); }
+  footer .wrap { padding: 50px 28px 44px; text-align: center; }
+  footer .f-eye { font-size: .72rem; font-weight: 500; letter-spacing: .19em; text-transform: uppercase; color: color-mix(in srgb, var(--paper-warm) 68%, transparent); margin: 0 0 16px; }
+  footer .f-mail { font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 500; color: var(--paper); text-decoration: none; border-bottom: 1.5px solid transparent; }
+  footer .f-mail:hover { border-color: var(--red); }
+  footer .f-links { margin-top: 24px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: .92rem; letter-spacing: .03em; }
+  footer .f-links a { color: color-mix(in srgb, var(--paper-warm) 84%, transparent); text-decoration: none; border-bottom: 1px solid transparent; }
+  footer .f-links a:hover { border-color: var(--red); color: var(--paper); }
+  footer .colophon { margin-top: 30px; font-size: .7rem; color: color-mix(in srgb, var(--paper-warm) 52%, transparent); letter-spacing: .03em; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .two-col { grid-template-columns: 1fr; }
+    .pub { grid-template-columns: 1fr; }
+    .pub .p-yr { text-align: left; padding-top: 6px; }
+    .head h2 { font-size: 1.32rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Anna Bosshard</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#talks">Research</a>
+      <a href="#funding">Funding</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- INTRO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Anna Bosshard</h1>
+      <p class="role">PhD candidate in Social Psychology</p>
+      <a class="hero-mail" href="mailto:a.bosshard@uva.nl">a.bosshard@uva.nl</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="course" id="about">
+    <div class="wrap">
+      <div class="head"><h2>About</h2><span class="rule"></span></div>
+      <p class="lede">I am a doctoral researcher at the University of Amsterdam with Dr. Cameron Brick and Prof. Dr. Frenk van Harreveld studying the psychological dimensions of sustainable and just transitions. My core projects are about reducing clothing consumption and enhancing support for international climate finance. I use field experiments, discrete choice paradigms, and consequential behavior measures to emulate real-world settings and strengthen the practical relevance of the research. I also teach on social psychology and sustainability and consult on behavior change interventions.</p>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="course" id="publications">
+    <div class="wrap">
+      <div class="head"><h2>Publications</h2><span class="rule"></span></div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1002/casp.70243" target="_blank" rel="noopener">Promoting clothing repair with in-person workshops: A quasi-experimental field study</a></p>
+          <p class="p-meta">Bosshard, A., Zhou, L., Brick, C., &amp; van Harreveld, F. · <span class="venue">Journal of Community &amp; Applied Social Psychology</span>, 36(2), e70243</p>
+        </div>
+        <div class="p-yr">2026</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1016/j.cresp.2026.100264" target="_blank" rel="noopener">Repairing clothes and feeling good: Do positive emotions influence sustainable clothing behaviours?</a></p>
+          <p class="p-meta">Zhou, L., Bosshard, A., Sauter, D., &amp; Brick, C. · <span class="venue">Current Research in Ecological and Social Psychology</span>, 100264</p>
+        </div>
+        <div class="p-yr">2026</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1039/D5VA00037H" target="_blank" rel="noopener">Psychological outcomes from a citizen-science study on microplastics from household clothes washing</a></p>
+          <p class="p-meta">Brick, C., Bosshard, A., Boven, B., Hijink, J., Praetorius, A., &amp; Jacobs, L. · <span class="venue">Environmental Science: Advances</span></p>
+        </div>
+        <div class="p-yr">2025</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1016/j.jenvp.2024.102297" target="_blank" rel="noopener">Limited overlap among behavioural tasks, pro-environmental propensity, and carbon footprint</a></p>
+          <p class="p-meta">Bosshard, A., Berger, S., Lange, F., Sosa, A., Kankaanpää, E., Fellegi, E., … &amp; Brick, C. · <span class="venue">Journal of Environmental Psychology</span>, 97, 102297</p>
+        </div>
+        <div class="p-yr">2024</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1038/s41558-024-02091-2" target="_blank" rel="noopener">Climate-change engagement of scientists</a></p>
+          <p class="p-meta">Dablander, F., Sachisthal, M. S., Cologna, V., Strahm, N., Bosshard, A., Grüning, N. M., … &amp; Haslbeck, J. M. · <span class="venue">Nature Climate Change</span>, 14(10), 1033–1039</p>
+        </div>
+        <div class="p-yr">2024</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1017/SJP.2023.3" target="_blank" rel="noopener">Climate concern and engagement: Large face-to-face and online polls by the Dutch non-profit Milieudefensie</a></p>
+          <p class="p-meta">Bosshard, A., Chatrou, A., &amp; Brick, C. · <span class="venue">The Spanish Journal of Psychology</span>, 26, e6</p>
+        </div>
+        <div class="p-yr">2023</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1016/j.oneear.2022.06.007" target="_blank" rel="noopener">Organizations can make a real impact on sustainable development</a></p>
+          <p class="p-meta">Zwicker, M. V., Bosshard, A., &amp; Brick, C. · <span class="venue">One Earth</span>, 5(7), 751–753</p>
+        </div>
+        <div class="p-yr">2022</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1016/j.jenvp.2021.101694" target="_blank" rel="noopener">More green than gray? Toward a sustainable overview of environmental spillover effects: A Bayesian meta-analysis</a></p>
+          <p class="p-meta">Geiger, S. J., Brick, C., Nalborczyk, L., Bosshard, A., &amp; Jostmann, N. B. · <span class="venue">Journal of Environmental Psychology</span>, 78, 101694</p>
+        </div>
+        <div class="p-yr">2021</div>
+      </div>
+
+      <div class="pub">
+        <div>
+          <p class="p-title"><a href="https://doi.org/10.1016/j.copsyc.2021.04.001" target="_blank" rel="noopener">Motivation and climate change: A review</a></p>
+          <p class="p-meta">Brick, C., Bosshard, A., &amp; Whitmarsh, L. · <span class="venue">Current Opinion in Psychology</span>, 42, 82–88</p>
+        </div>
+        <div class="p-yr">2021</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="course" id="teaching">
+    <div class="wrap">
+      <div class="head"><h2>Teaching &amp; Supervision</h2><span class="rule"></span></div>
+      <ul class="menu">
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Summer school</span>: Psychology for a Sustainable Future, Leysin</div>
+            <div class="m-sub">Two-week programme for Bachelor students, co-led with Saara Taavila</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">Aug 2026</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Thesis supervision</span> in Social Psychology, University of Amsterdam</div>
+            <div class="m-sub">8 Bachelor and Master students</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2022–2026</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Lecture</span>: The Psychology of Fashion, University of Amsterdam</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2025</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Guest seminar</span>: Introduction to behavior change, <a href="https://www.tue.nl/en/" target="_blank" rel="noopener">Eindhoven University of Technology</a></div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2024, 2025</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Lecture</span>: Social Influence, Aarhus University</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2022</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section class="course" id="talks">
+    <div class="wrap">
+      <div class="head"><h2>Research presentations</h2><span class="rule"></span></div>
+      <ul class="menu">
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Public support for global climate funding in the Netherlands</div>
+            <div class="m-sub">Research talk · International Congress of Applied Psychology (ICAP) · Florence</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">August 2026</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Predictors of clothing acquisition: A systematic review</div>
+            <div class="m-sub">Research blitz · International Congress of Applied Psychology (ICAP) · Florence</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">August 2026</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Effort drives reward in pro-environmental consumption</div>
+            <div class="m-sub">Talk · Psychology Institute, University of Amsterdam</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">April 2026</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Workshops for clothing repair</div>
+            <div class="m-sub">Research talk · Association for Social Psychology (ASPO) · Maastricht</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">November 2025</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Public support for global climate funding in the Netherlands</div>
+            <div class="m-sub">Symposium talk · International Conference of Environmental Psychology (ICEP) · Vilnius</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">June 2025</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Workshops for clothing repair</div>
+            <div class="m-sub">Research talk · Association for Social Psychology (ASPO) · Groningen</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">December 2024</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Workshops for clothing repair</div>
+            <div class="m-sub">Research talk · International Association for People-Environment Studies (IAPS) · Barcelona</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">June 2024</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Workshops for clothing repair</div>
+            <div class="m-sub">Talk · Psychology Institute, University of Amsterdam</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">April 2024</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Workshops for clothing repair</div>
+            <div class="m-sub">Poster · Conference of the Kurt Lewin Institute (KLI) · Utrecht</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">April 2024</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Citizen science and microfibers</div>
+            <div class="m-sub">Symposium talk · International Conference of Environmental Psychology (ICEP) · Aarhus</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">June 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Poster · European Association of Social Psychology General Meeting (EASP) · Kraków</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">June 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Poster · Conference on Environmental Psychology (CEP) · Lillehammer</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">November 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Research talk · Association for Social Psychology (ASPO) · Utrecht</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">April 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Invited talk · <a href="https://www.wur.nl/en/chair-groups/business-science/marketing-and-consumer-behaviour" target="_blank" rel="noopener">Marketing and Consumer Behaviour Group</a>, Wageningen University</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">March 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Talk · Psychology Research Institute, University of Amsterdam</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">March 2023</span>
+        </li>
+
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title">Consequential behavioural measurement</div>
+            <div class="m-sub">Poster · The Society for Personality and Social Psychology (SPSP) · online</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">February 2023</span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- FUNDING -->
+  <section class="course" id="funding">
+    <div class="wrap">
+      <div class="head"><h2>Funding Acquisition</h2><span class="rule"></span></div>
+      <ul class="menu">
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">M grant</span>, Centre for Sustainable Development, UvA</div>
+            <div class="m-sub">Co-PI with Dr. Shreya Dubey · €30,000</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2025</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Seed-money grant</span>, Kurt Lewin Institute</div>
+            <div class="m-sub">Co-PI with Dr. Anandita Sabherwal · €3,000</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2025</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">Isaac Roet Prize</span>, Amsterdam University Fund</div>
+            <div class="m-sub">€5,000</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2022</span>
+        </li>
+        <li class="item">
+          <div class="m-main">
+            <div class="m-title"><span class="em">PhD scholarship</span>, Studienstiftung des Deutschen Volkes</div>
+          </div>
+          <span class="lead" aria-hidden="true"></span>
+          <span class="price">2022</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <a class="f-mail" href="mailto:a.bosshard@uva.nl">a.bosshard@uva.nl</a>
+    <div class="f-links">
+      <a href="https://scholar.google.com/citations?user=kVr-e_4AAAAJ&amp;hl=nl&amp;oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-2095-1116" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://www.linkedin.com/in/anna-bosshard-a39281115/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.uva.nl" target="_blank" rel="noopener">University of Amsterdam</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
