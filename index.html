@@ -138,6 +138,14 @@
   .lead { flex: 1 1 24px; min-width: 18px; align-self: center; border-bottom: 1px dotted var(--rule); height: 0; transform: translateY(3px); }
   .price { font-size: .82rem; color: var(--olive-soft); white-space: nowrap; letter-spacing: .03em; font-variant-numeric: tabular-nums; }
 
+  /* research themes */
+  .themes { list-style: none; margin: 26px 0 0; padding: 0; }
+  .theme { display: grid; grid-template-columns: auto 1fr; column-gap: 20px; padding: 20px 0; border-bottom: 1px dotted var(--rule); }
+  .theme:last-child { border-bottom: 0; }
+  .t-no { font-size: .82rem; font-weight: 500; color: var(--olive-soft); font-variant-numeric: tabular-nums; letter-spacing: .06em; padding-top: .3rem; }
+  .t-title { font-weight: 500; font-size: 1.18rem; line-height: 1.3; color: var(--olive); letter-spacing: -.01em; margin: 0 0 6px; }
+  .t-q { font-size: 1rem; color: var(--ink); margin: 0; max-width: 58ch; }
+
   /* publications */
   .pub { display: grid; grid-template-columns: 1fr auto; column-gap: 18px; padding: 16px 0; border-bottom: 1px dotted var(--rule); }
   .pub:last-child { border-bottom: 0; }
@@ -174,6 +182,7 @@
     .pub { grid-template-columns: 1fr; }
     .pub .p-yr { text-align: left; padding-top: 6px; }
     .head h2 { font-size: 1.32rem; }
+    .theme { column-gap: 14px; }
   }
 </style>
 </head>
@@ -185,9 +194,10 @@
     <a class="brand" href="#top">Anna Bosshard</a>
     <nav class="links" aria-label="Sections">
       <a href="#about">About</a>
+      <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching</a>
-      <a href="#talks">Research</a>
+      <a href="#talks">Talks</a>
       <a href="#funding">Funding</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -210,6 +220,37 @@
     <div class="wrap">
       <div class="head"><h2>About</h2><span class="rule"></span></div>
       <p class="lede">I am a doctoral researcher at the University of Amsterdam with Dr. Cameron Brick and Prof. Dr. Frenk van Harreveld studying the psychological dimensions of sustainable and just transitions. My core projects are about reducing clothing consumption and enhancing support for international climate finance. I use field experiments, discrete choice paradigms, and consequential behavior measures to emulate real-world settings and strengthen the practical relevance of the research. I also teach on social psychology and sustainability and consult on behavior change interventions.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH THEMES -->
+  <section class="course" id="research">
+    <div class="wrap">
+      <div class="head"><h2>Research</h2><span class="rule"></span></div>
+      <p class="lede">Three connected questions run through my work: why we consume, who pays for climate action, and how to measure both well enough to act on.</p>
+      <ul class="themes">
+        <li class="theme">
+          <span class="t-no">01</span>
+          <div class="t-body">
+            <h3 class="t-title">Consumption reduction</h3>
+            <p class="t-q">What motivates and enables clothing overconsumption, and which interventions effectively reduce it?</p>
+          </div>
+        </li>
+        <li class="theme">
+          <span class="t-no">02</span>
+          <div class="t-body">
+            <h3 class="t-title">Climate finance</h3>
+            <p class="t-q">How do people think about global climate funding, and can support for reparations be strengthened?</p>
+          </div>
+        </li>
+        <li class="theme">
+          <span class="t-no">03</span>
+          <div class="t-body">
+            <h3 class="t-title">Accurate measurement</h3>
+            <p class="t-q">How can we track consumption in ways that link cleanly to environmental impacts, and how can we get a firm grasp on preferences?</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
